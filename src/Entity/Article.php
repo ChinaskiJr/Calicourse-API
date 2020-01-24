@@ -26,7 +26,7 @@ class Article
     /**
      * @ORM\Column(type="text", length=2048, nullable=true)
      */
-    private $text;
+    private $comment;
 
     /**
      * @ORM\Column(type="boolean")
@@ -113,13 +113,13 @@ class Article
         return $this;
     }
 
-    public function getText()
+    public function getComment()
     {
-        return $this->text;
+        return $this->comment;
     }
 
-    public function setText($text): void
+    public function setComment($comment): void
     {
-        $this->text = $text;
+        $this->comment = $comment;
     }
 }
