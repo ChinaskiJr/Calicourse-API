@@ -24,6 +24,11 @@ class Article
     private $title;
 
     /**
+     * @ORM\Column(type="text", length=2048, nullable=true)
+     */
+    private $text;
+
+    /**
      * @ORM\Column(type="boolean")
      */
     private $bought;
@@ -106,5 +111,15 @@ class Article
         $this->boughtAt = $boughtAt;
 
         return $this;
+    }
+
+    public function getText()
+    {
+        return $this->text;
+    }
+
+    public function setText($text): void
+    {
+        $this->text = $text;
     }
 }
