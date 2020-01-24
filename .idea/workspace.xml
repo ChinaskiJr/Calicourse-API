@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="585a3570-1f72-4bda-beaf-c890935d3cc4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/calicourse-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/calicourse-api.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -145,6 +141,7 @@
       <path value="$PROJECT_DIR$/vendor/psr/link" />
       <path value="$PROJECT_DIR$/vendor/willdurand/negotiation" />
       <path value="$PROJECT_DIR$/vendor/nelmio/cors-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/apache-pack" />
     </include_path>
   </component>
   <component name="ProjectId" id="1WrGSTaXVDTI5hb7TONV8t4v9XA" />
@@ -177,7 +174,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1579900299106</updated>
-      <workItem from="1579900300404" duration="1059000" />
+      <workItem from="1579900300404" duration="1659000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1579900354194</created>
@@ -186,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579900354194</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Install API components">
+      <created>1579901381109</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1579901381109</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,21 +198,22 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
+    <MESSAGE value="Install API components" />
+    <option name="LAST_COMMIT_MESSAGE" value="Install API components" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2474" y="157" width="802" height="670" key="#Deployment" timestamp="1579900809249">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2474" y="157" width="802" height="670" key="#Deployment/1920.0.1920.1080/0.0.1920.1080@1920.0.1920.1080" timestamp="1579900809249" />
-    <state x="2471" y="91" width="802" height="670" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579901237892">
+    <state x="850" y="151" width="802" height="670" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579901530387">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="850" y="151" width="802" height="670" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.0.1920.1080@1920.0.1920.1080" timestamp="1579901530387" />
+    <state x="2472" y="-38" width="802" height="972" key="CommitChangelistDialog2" timestamp="1579901381023">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2471" y="91" width="802" height="670" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.0.1920.1080@1920.0.1920.1080" timestamp="1579901237892" />
-    <state x="2473" y="-16" width="802" height="972" key="CommitChangelistDialog2" timestamp="1579900354121">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2473" y="-16" width="802" height="972" key="CommitChangelistDialog2/1920.0.1920.1080/0.0.1920.1080@1920.0.1920.1080" timestamp="1579900354121" />
+    <state x="2472" y="-38" width="802" height="972" key="CommitChangelistDialog2/1920.0.1920.1080/0.0.1920.1080@1920.0.1920.1080" timestamp="1579901381023" />
     <state width="235" height="541" key="HiddenNamespacesPopup" timestamp="1579901205835">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
