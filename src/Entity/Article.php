@@ -48,6 +48,11 @@ class Article
      */
     private $boughtAt;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Shop", inversedBy="articles")
+     */
+    private $shop;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -121,5 +126,17 @@ class Article
     public function setComment($comment): void
     {
         $this->comment = $comment;
+    }
+
+    public function getShop(): ?Shop
+    {
+        return $this->shop;
+    }
+
+    public function setShop(?Shop $shop): self
+    {
+        $this->shop = $shop;
+
+        return $this;
     }
 }
