@@ -25,7 +25,7 @@ class Shop
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
-     * @Groups({"shop:read"})
+     * @Groups({"shop:read", "article:read"})
      */
     private $id;
 
@@ -33,7 +33,7 @@ class Shop
      * The name of the shop.
      *
      * @ORM\Column(type="string", length=255),
-     * @Groups({"shop:read", "shop:write"})
+     * @Groups({"shop:read", "shop:write", "article:read"})
      * @Assert\NotBlank()
      * @Assert\Length(
      *     max=255,
