@@ -4,11 +4,14 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ApiResource(
  *     collectionOperations={"get", "post"},
- *     itemOperations={"get", "put", "delete"}
+ *     itemOperations={"get", "put", "delete"},
+ *     normalizationContext={"groups"={"article:read"}, "swagger_definition_name"="Read"},
+ *     denormalizationContext={"groups"={"article:write"}, "swagger_definition_name"="Write"}
  * )
  * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
  */
@@ -24,49 +27,56 @@ class Article
     /**
      * The title of the article.
      *
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255),
+     * @Groups({"article:read", "article:write"})
      */
     private $title;
 
     /**
      * A little comment about the article (where to find it in the store, quantity ?)
      *
-     * @ORM\Column(type="text", length=2048, nullable=true)
+     * @ORM\Column(type="text", length=2048, nullable=true),
+     * @Groups({"article:read", "article:write"})
      */
     private $comment;
 
     /**
      * A boolean. Has it been bought yet ?
      *
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean"),
+     * @Groups({"article:read", "article:write"})
      */
     private $bought;
 
     /**
      * A boolean. Do we still want it on the list memo ?
      *
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean"),
+     * @Groups({"article:read", "article:write"})
      */
     private $archived;
 
     /**
      * When was this article created ?
      *
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime"),
+     * @Groups({"article:read", "article:write"})
      */
     private $createdAt;
 
     /**
      * When was this article last bought ?
      *
-     * @ORM\Column(type="datetime", nullable=true)
+     * @ORM\Column(type="datetime", nullable=true),
+     * @Groups({"article:read", "article:write"})
      */
     private $boughtAt;
 
     /**
      * To what shop is this article related ?
      *
-     * @ORM\ManyToOne(targetEntity="App\Entity\Shop", inversedBy="articles")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Shop", inversedBy="articles"),
+     * @Groups({"article:read", "article:write"})
      */
     private $shop;
 

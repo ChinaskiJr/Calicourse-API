@@ -6,11 +6,14 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ApiResource(
  *     collectionOperations={"get", "post"},
- *     itemOperations={"get", "put", "delete"}
+ *     itemOperations={"get", "put", "delete"},
+ *     normalizationContext={"groups"={"shop:read"}, "swagger_definition_name"="Read"},
+ *     denormalizationContext={"groups"={"shop:write"}, "swagger_definition_name"="Write"}
  * )
  *  @ORM\Entity(repositoryClass="App\Repository\ShopRepository")
  */
@@ -26,14 +29,16 @@ class Shop
     /**
      * The name of the shop.
      *
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255),
+     * @Groups({"shop:read", "shop:write"})
      */
     private $name;
 
     /**
      * The articles linked to this shop.
      *
-     * @ORM\OneToMany(targetEntity="App\Entity\Article", mappedBy="shop")
+     * @ORM\OneToMany(targetEntity="App\Entity\Article", mappedBy="shop"),
+     * @Groups({"shop:read", "shop:write"})
      */
     private $articles;
 
