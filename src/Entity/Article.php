@@ -5,6 +5,7 @@ namespace App\Entity;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ApiResource(
@@ -29,6 +30,11 @@ class Article
      *
      * @ORM\Column(type="string", length=255),
      * @Groups({"article:read", "article:write"})
+     * @Assert\NotBlank()
+     * @Assert\Length(
+     *     max=255,
+     *     maxMessage="Le titre doit faire moins de 255 caractères"
+     * )
      */
     private $title;
 
@@ -37,6 +43,10 @@ class Article
      *
      * @ORM\Column(type="text", length=2048, nullable=true),
      * @Groups({"article:read", "article:write"})
+     * @Assert\Length(
+     *     max=2048,
+     *     maxMessage="Le commentaire doit faire moins de 2048 caractères"
+     * )
      */
     private $comment;
 
@@ -46,7 +56,7 @@ class Article
      * @ORM\Column(type="boolean"),
      * @Groups({"article:read", "article:write"})
      */
-    private $bought;
+    private $bought = false;
 
     /**
      * A boolean. Do we still want it on the list memo ?
@@ -54,13 +64,13 @@ class Article
      * @ORM\Column(type="boolean"),
      * @Groups({"article:read", "article:write"})
      */
-    private $archived;
+    private $archived = false;
 
     /**
      * When was this article created ?
      *
      * @ORM\Column(type="datetime"),
-     * @Groups({"article:read", "article:write"})
+     * @Groups({"article:read"})
      */
     private $createdAt;
 
@@ -79,6 +89,14 @@ class Article
      * @Groups({"article:read", "article:write"})
      */
     private $shop;
+
+    /**
+     * Article constructor.
+     */
+    public function __construct()
+    {
+        $this->createdAt = new \DateTimeImmutable();
+    }
 
     public function getId(): ?int
     {
@@ -124,13 +142,6 @@ class Article
     public function getCreatedAt(): ?\DateTimeInterface
     {
         return $this->createdAt;
-    }
-
-    public function setCreatedAt(\DateTimeInterface $createdAt): self
-    {
-        $this->createdAt = $createdAt;
-
-        return $this;
     }
 
     public function getBoughtAt(): ?\DateTimeInterface
