@@ -18,6 +18,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  * )
  * @UniqueEntity(fields={"username"})
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * // "user" is a reserved word in postgresql
+ * @ORM\Table(name="`user`")
  */
 class User implements UserInterface
 {
