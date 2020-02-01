@@ -22,7 +22,7 @@ class Article
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
-     * @Groups({"article:read"})
+     * @Groups({"article:read", "shop:read"})
      */
     private $id;
 
@@ -30,7 +30,7 @@ class Article
      * The title of the article.
      *
      * @ORM\Column(type="string", length=255),
-     * @Groups({"article:read", "article:write"})
+     * @Groups({"article:read", "article:write", "shop:read"})
      * @Assert\NotBlank()
      * @Assert\Length(
      *     max=255,
@@ -43,7 +43,7 @@ class Article
      * A little comment about the article (where to find it in the store, quantity ?)
      *
      * @ORM\Column(type="text", length=2048, nullable=true),
-     * @Groups({"article:read", "article:write"})
+     * @Groups({"article:read", "article:write", "shop:read"})
      * @Assert\Length(
      *     max=2048,
      *     maxMessage="Le commentaire doit faire moins de 2048 caractères"
@@ -55,7 +55,7 @@ class Article
      * A boolean. Has it been bought yet ?
      *
      * @ORM\Column(type="boolean"),
-     * @Groups({"article:read", "article:write"})
+     * @Groups({"article:read", "article:write", "shop:read"})
      */
     private $bought = false;
 
@@ -63,7 +63,7 @@ class Article
      * A boolean. Do we still want it on the list memo ?
      *
      * @ORM\Column(type="boolean"),
-     * @Groups({"article:read", "article:write"})
+     * @Groups({"article:read", "article:write", "shop:read"})
      */
     private $archived = false;
 
@@ -71,7 +71,7 @@ class Article
      * When was this article created ?
      *
      * @ORM\Column(type="datetime"),
-     * @Groups({"article:read"})
+     * @Groups({"article:read", "shop:read"})
      */
     private $createdAt;
 
@@ -79,7 +79,7 @@ class Article
      * When was this article last bought ?
      *
      * @ORM\Column(type="datetime", nullable=true),
-     * @Groups({"article:read", "article:write"})
+     * @Groups({"article:read", "article:write", "shop:read"})
      */
     private $boughtAt;
 
