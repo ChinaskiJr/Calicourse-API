@@ -21,11 +21,15 @@ class Shop
     private $id;
 
     /**
+     * The name of the shop.
+     *
      * @ORM\Column(type="string", length=255)
      */
     private $name;
 
     /**
+     * The articles linked to this shop.
+     *
      * @ORM\OneToMany(targetEntity="App\Entity\Article", mappedBy="shop")
      */
     private $articles;

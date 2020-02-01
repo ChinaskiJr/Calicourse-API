@@ -19,36 +19,50 @@ class Article
     private $id;
 
     /**
+     * The title of the article.
+     *
      * @ORM\Column(type="string", length=255)
      */
     private $title;
 
     /**
+     * A little comment about the article (where to find it in the store, quantity ?)
+     *
      * @ORM\Column(type="text", length=2048, nullable=true)
      */
     private $comment;
 
     /**
+     * A boolean. Has it been bought yet ?
+     *
      * @ORM\Column(type="boolean")
      */
     private $bought;
 
     /**
+     * A boolean. Do we still want it on the list memo ?
+     *
      * @ORM\Column(type="boolean")
      */
     private $archived;
 
     /**
+     * When was this article created ?
+     *
      * @ORM\Column(type="datetime")
      */
     private $createdAt;
 
     /**
+     * When was this article last bought ?
+     *
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $boughtAt;
 
     /**
+     * To what shop is this article related ?
+     *
      * @ORM\ManyToOne(targetEntity="App\Entity\Shop", inversedBy="articles")
      */
     private $shop;
