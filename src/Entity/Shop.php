@@ -47,6 +47,7 @@ class Shop
      * The articles linked to this shop.
      *
      * @ORM\OneToMany(targetEntity="App\Entity\Article", mappedBy="shop"),
+     * @ORM\OrderBy({"title" = "ASC"}),
      * @Groups({"shop:read", "shop:write"})
      */
     private $articles;
