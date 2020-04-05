@@ -12,7 +12,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     collectionOperations={"get", "post"},
  *     itemOperations={"get", "put", "delete"},
  *     normalizationContext={"groups"={"article:read"}, "swagger_definition_name"="Read"},
- *     denormalizationContext={"groups"={"article:write"}, "swagger_definition_name"="Write"}
+ *     denormalizationContext={"groups"={"article:write"}, "swagger_definition_name"="Write"},
+ *     attributes={"order"={"title": "ASC"}}
  * )
  * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
  */
