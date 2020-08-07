@@ -2,6 +2,9 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\BooleanFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
@@ -15,6 +18,10 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     denormalizationContext={"groups"={"article:write"}, "swagger_definition_name"="Write"},
  *     attributes={"order"={"title": "ASC"}}
  * )
+ * @ApiFilter(BooleanFilter::class, properties={"bought"})
+ * @ApiFilter(SearchFilter::class, properties={
+ *     "shop": "exact"
+ * })
  * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
  */
 class Article
