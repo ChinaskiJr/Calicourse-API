@@ -14,6 +14,14 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
+ * For creating a media :
+ * POST on /api/media_objects
+ * Headers :
+ * - Content-Type : multipart/form-data
+ * Body :
+ * Type : file, name : file
+ * Id will be sent in the response
+ *
  * @ORM\Entity
  * @ApiResource(
  *     iri="http://schema.org/MediaObject",

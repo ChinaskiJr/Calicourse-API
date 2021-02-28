@@ -103,6 +103,8 @@ class Article
     /**
      * @var MediaObject|null
      *
+     * This is the way in json body : "image": "/api/media_objects/<id>"
+     *
      * @ORM\ManyToOne(targetEntity=MediaObject::class)
      * @Groups({"article:read", "article:write", "shop:read"})
      * @ORM\JoinColumn(nullable=true)
