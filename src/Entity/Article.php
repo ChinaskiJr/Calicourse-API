@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiFilter;
+use ApiPlatform\Core\Annotation\ApiProperty;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\BooleanFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
@@ -100,6 +101,16 @@ class Article
     private $shop;
 
     /**
+     * @var MediaObject|null
+     *
+     * @ORM\ManyToOne(targetEntity=MediaObject::class)
+     * @Groups({"article:read", "article:write", "shop:read"})
+     * @ORM\JoinColumn(nullable=true)
+     * @ApiProperty(iri="http://schema.org/image")
+     */
+    private $image;
+
+    /**
      * Article constructor.
      */
     public function __construct()
@@ -185,5 +196,21 @@ class Article
         $this->shop = $shop;
 
         return $this;
+    }
+
+    /**
+     * @return MediaObject|null
+     */
+    public function getImage(): ?MediaObject
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param MediaObject|null $image
+     */
+    public function setImage(?MediaObject $image): void
+    {
+        $this->image = $image;
     }
 }
