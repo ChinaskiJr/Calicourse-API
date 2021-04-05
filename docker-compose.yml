@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+    apache:
+        build: './apache'
+        volumes:
+            - './symfony:/var/www/html'
+        ports:
+        -   '3000:80'
+    php:
+        build:
+            context: .
+            dockerfile: php/Dockerfile
+        volumes:
+            - ./symfony:/var/www/html
+    postgresql:
+        image: postgres:11
+        restart: always
+        env_file:
+            -   ./env/postgresql.env
+# TODO : dockerize php utility container
