@@ -1,0 +1,8 @@
+\App\Entity\Article:
+    article_{1..100}:
+        title: '<sentence(2)>'
+        comment: '<text()>'
+        bought: '<boolean()>'
+        archived: '<boolean()>'
+        boughtAt: '<dateTime()>'
+        shop: '@shop_*'

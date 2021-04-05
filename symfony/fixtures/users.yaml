@@ -1,0 +1,10 @@
+App\Entity\User:
+    robin:
+        username: 'Robin'
+        password: 'secret'
+        apiToken: '1234'
+    camille:
+        username: 'Camille'
+        password: 'secret'
+        apiToken: '4321'
+
